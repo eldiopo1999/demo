@@ -6,11 +6,17 @@ pipeline {
                  git(branch: 'master', credentialsId: 'eldiopo',  url: 'https://github.com/eldiopo1999/demo.git')
               }
          }
-		 stage('Build') {
+	  
+	  stage('Build') {
                steps{
-				sh "mvn clean verify"
+				echo "APP BUILD"
 			  }
          }
 	
+	 stage('deploy') {
+               steps{
+				echo "APP DEPLOY APP"
+			  }
+         }
 }
 }
